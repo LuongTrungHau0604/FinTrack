@@ -58,7 +58,3 @@ An Android application designed to help users track their personal finances, man
    - Open the project in Android Studio.
    - Sync project with Gradle files.
    - Run the app on an emulator or a physical device.
-
-## 🤝 Contributors
-- 522H0037
-- 522H0157
