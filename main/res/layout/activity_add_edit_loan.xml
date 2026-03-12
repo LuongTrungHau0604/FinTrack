@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:colorBackground"
+    tools:context=".ui.loanandebt.AddEditLoanActivity"> <!-- Rename Activity class accordingly -->
+
+    <!-- 1. Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_add_edit_loan"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="Add/Edit Loan or Debt" />
+
+    <!-- 2. Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Loan/Debt Name Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_loan_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Loan/Debt Name (e.g., Car Loan)">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_loan_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Entity Name Input (Lender/Borrower) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_entity_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Lender/Borrower Name">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_entity_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName|textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Initial Amount & Currency Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_loan_initial_amount"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:hint="Initial Amount">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_loan_initial_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="bottom"> <!-- Align items at the bottom -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CURRENCY"
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_marginBottom="4dp"/>
+                    <Spinner
+                        android:id="@+id/spinner_loan_currency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="90dp"
+                        android:minHeight="48dp"
+                        android:background="@drawable/bg_spinner_border"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Remaining Balance (Non-editable for add, maybe editable for specific corrections in edit?) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_loan_current_balance"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Current Remaining Balance">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_loan_current_balance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:enabled="false" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!-- Interest Rate -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_interest_rate"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:suffixText="%"
+                android:hint="Interest Rate (Yearly %)">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_interest_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Start Date -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="START DATE"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"/>
+            <TextView
+                android:id="@+id/text_view_loan_start_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="Select Start Date"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:background="@drawable/bg_spinner_border"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <!-- Due Date -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DUE DATE (Estimated)"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"/>
+            <TextView
+                android:id="@+id/text_view_loan_due_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="Select Due Date"
+                android:textSize="16sp"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:background="@drawable/bg_spinner_border"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <!-- Payment Day (Optional) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_payment_day"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Payment Day of Month (1-31, Optional)">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_payment_day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Notes -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_loan_notes"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Notes (Optional)">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_loan_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:minLines="2"
+                    android:gravity="top"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Save Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save_loan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                android:paddingVertical="12dp"
+                android:text="Save Loan/Debt" />
+
+            <!-- ProgressBar -->
+            <ProgressBar
+                android:id="@+id/progress_bar_add_edit_loan"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

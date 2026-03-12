@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+
+    <!-- Giá trị kỹ thuật tương ứng với account_types_array -->
+    <!-- Quan trọng: Thứ tự và số lượng phải khớp với mảng trên -->
+
+
+    <!-- Cho Currency Spinner -->
+
+
+    <string name="greeting_format">Good afternoon,\n%1$s</string>
+
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="16dp"
+    android:gravity="center_vertical"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+<ImageView
+android:id="@+id/img_category_icon"
+android:layout_width="40dp"
+android:layout_height="40dp"
+android:layout_marginEnd="16dp"
+tools:srcCompat="@drawable/ic_placeholder_category" />
+
+    <!-- Khối thông tin chính -->
+<LinearLayout
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:orientation="vertical">
+
+<TextView
+    android:id="@+id/txt_transaction_description"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="Cà phê Highlands"
+    android:textSize="16sp"
+    android:textColor="?android:attr/textColorPrimary"
+    android:textStyle="bold"
+    android:maxLines="1"
+    android:ellipsize="end"/>
+
+<TextView
+    android:id="@+id/txt_transaction_category"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="Ăn uống"
+    android:textSize="13sp"
+    android:textColor="?android:attr/textColorSecondary"/>
+
+<TextView
+    android:id="@+id/txt_transaction_date"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:text="2024-05-15"
+    android:textSize="12sp"
+    android:textColor="?android:attr/textColorSecondary"
+    android:layout_marginTop="2dp" />
+</LinearLayout>
+
+    <!-- Số tiền -->
+<TextView
+android:id="@+id/txt_transaction_amount"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    tools:text="-55,000 ₫"
+    android:textSize="15sp"
+    android:textStyle="bold"
+    android:gravity="end"
+    android:textColor="?android:attr/textColorPrimary"/>
+
+    <!-- Nút Edit -->
+    <ImageButton
+    android:id="@+id/btn_edit_transaction"
+    android:layout_width="36dp"
+    android:layout_height="36dp"
+    android:src="@drawable/ic_edit" />
+
+    <!-- Nút Delete -->
+    <ImageButton
+    android:id="@+id/btn_delete_transaction"
+    android:layout_width="36dp"
+    android:layout_height="36dp"
+    android:src="@drawable/ic_delete" />
+
+</LinearLayout>

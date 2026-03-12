@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- For Account Type Spinner in Add/Edit Account Screen -->
+    <!-- Displayed Names -->
+    <string-array name="account_types_array">
+        <item>Cash</item>
+        <item>Bank Account</item>
+        <item>E-Wallet</item>
+        <item>Savings</item>
+        <item>Credit Card</item> <!-- Added Credit Card -->
+        <item>Investment</item> <!-- Added Investment -->
+        <item>Other</item>      <!-- Added Other -->
+    </string-array>
+
+    <!-- Corresponding technical values (must match order and size of above) -->
+    <string-array name="account_type_values_array">
+        <item>cash</item>
+        <item>bank</item>
+        <item>e_wallet</item>
+        <item>savings</item>
+        <item>credit_card</item>
+        <item>investment</item>
+        <item>other</item>
+    </string-array>
+
+    <!-- For Currency Spinner (Add more as needed) -->
+    <string-array name="currencies_array">
+        <item>VND</item>
+        <item>USD</item>
+        <item>EUR</item>
+        <item>JPY</item>
+        <!-- Add other relevant currency codes -->
+    </string-array>
+
+    <!-- For Repeat Cycle Spinner in Add/Edit Reminder Screen -->
+    <string-array name="repeat_cycles">
+        <item>Does not repeat</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Yearly</item>
+        <!-- Add other cycles like "Every 2 Weeks", "Quarterly" if needed -->
+    </string-array>
+
+    <!-- Optional: Corresponding technical values for repeat_cycles_array if needed -->
+    <string-array name="repeat_cycle_values_array">
+        <item>none</item>
+        <item>daily</item>
+        <item>weekly</item>
+        <item>monthly</item>
+        <item>yearly</item>
+    </string-array>
+
+
+    <!-- For Reminder Type Spinner in Add/Edit Reminder Screen -->
+    <string-array name="reminder_types">
+        <item>Bill</item>
+        <item>Debt Payment</item>
+        <item>Subscription</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Optional: Corresponding technical values for reminder_types_array if needed -->
+    <string-array name="reminder_type_values_array">
+        <item>bill</item>
+        <item>debt_payment</item>
+        <item>subscription</item>
+        <item>other</item>
+    </string-array>
+
+</resources>

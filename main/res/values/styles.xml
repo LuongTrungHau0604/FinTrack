@@ -1,0 +1,86 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <!-- Choose a Material Components theme (e.g., Theme.MaterialComponents.DayNight.NoActionBar) -->
+
+    <style name="circleImageStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Styles From Error Messages (Add these) -->
+
+    <!-- Style for CardViews -->
+    <style name="CardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">16dp</item> <!-- Example corner radius -->
+        <item name="cardElevation">4dp</item>   <!-- Example elevation -->
+        <item name="cardBackgroundColor">@color/white</item>
+        <!-- Add other CardView attributes as needed -->
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <!-- Style for EditText inside TextInputLayout -->
+    <style name="EditTextStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <!-- Hint color, text color etc. can be inherited from the theme or set here -->
+        <!-- <item name="android:textColorHint">@color/grey_text</item> -->
+        <!-- <item name="boxStrokeColor">@color/primary_blue</item> -->
+        <!-- <item name="hintTextColor">@color/primary_blue</item> -->
+    </style>
+
+    <!-- Style for standard TextViews -->
+    <style name="TextViewStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textSize">16sp</item>
+        <!-- Add other common TextView attributes -->
+    </style>
+
+    <!-- Style for Buttons -->
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="cornerRadius">10dp</item> <!-- Example corner radius -->
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <!-- <item name="android:backgroundTint">@color/primary_blue</item> -->
+        <!-- <item name="android:textColor">@color/white</item> -->
+    </style>
+
+
+    <!-- Styles from your previous code (Keep these if you use the custom keypad) -->
+    <style name="KeypadButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@android:color/transparent</item> <!-- Consider using ?attr/selectableItemBackground -->
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/textColorPrimary</item> <!-- Use theme color -->
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="KeypadButton.Backspace" parent="KeypadButton">
+        <!-- Assuming you have ic_backspace drawable -->
+        <!-- <item name="android:src">@drawable/ic_backspace</item> -->
+        <item name="android:contentDescription">Backspace</item>
+        <!-- Use ImageView instead of Button for src -->
+    </style>
+
+    <style name="KeypadSpacer">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+</resources>

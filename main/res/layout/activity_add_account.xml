@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:colorBackground"
+    tools:context=".ui.accounts.AddAccountActivity">
+
+    <!-- 1. Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_add_account"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="Add New Account" />
+
+    <!-- 2. Nội dung chính -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Account Name Input -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_layout_account_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Account Name (e.g., My Wallet, VCB Bank)">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_account_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Account Type Spinner -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACCOUNT TYPE"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="4dp"/>
+            <Spinner
+                android:id="@+id/spinner_account_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:background="@drawable/bg_spinner_border" />
+
+            <!-- Initial Balance & Currency Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false">
+
+                <!-- Initial Balance Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_layout_initial_balance"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Initial Balance">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_initial_balance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Currency Spinner -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CURRENCY"
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_marginBottom="4dp"/>
+                    <Spinner
+                        android:id="@+id/spinner_currency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:minWidth="90dp"
+                        android:minHeight="48dp"
+                        android:background="@drawable/bg_spinner_border"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <!-- Include in Total Balance Switch -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_include_in_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:layout_marginTop="24dp"
+                android:text="Include in Total Balance"
+                android:checked="true" /> <!-- Mặc định là true -->
+
+            <!-- Icon Selection -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ICON"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="4dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:id="@+id/image_view_selected_account_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+                <Button
+                    android:id="@+id/btn_select_account_icon"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Icon"
+                    android:layout_marginStart="16dp"/>
+            </LinearLayout>
+
+            <!-- Color Selection -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="COLOR"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <View
+                    android:id="@+id/view_selected_account_color"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="#4CAF50" />
+                <Button
+                    android:id="@+id/btn_select_account_color"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Color"
+                    android:layout_marginStart="16dp"/>
+            </LinearLayout>
+
+            <!-- Optional: Link Bank Account Button (Placeholder) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_link_bank"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Link Bank Account (Optional)"
+                android:visibility="gone"/>
+            <LinearLayout
+                android:id="@+id/section_share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="24dp"
+                android:visibility="gone" > <!-- Chỉ hiển thị ở chế độ Edit và nếu là Owner -->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ACCOUNT SHARING"
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Nơi hiển thị danh sách người được chia sẻ -->
+                <!-- Có thể dùng TextView đơn giản hoặc RecyclerView phức tạp hơn -->
+                <TextView
+                    android:id="@+id/text_shared_with_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:layout_marginBottom="8dp"
+                    tools:text="Shared with: user2@email.com, user3@email.com" />
+                <!-- TODO: Thêm cơ chế xóa người dùng khỏi danh sách này -->
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_manage_sharing"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add/Manage Sharing"
+                    app:icon="@drawable/ic_share" /> <!-- Cần icon ic_share -->
+
+            </LinearLayout>
+
+
+            <!-- Save Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                android:paddingVertical="12dp"
+                android:text="Save Account" />
+
+            <!-- ProgressBar -->
+            <ProgressBar
+                android:id="@+id/progress_bar_add_account"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

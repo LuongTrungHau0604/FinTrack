@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="12dp"
+    android:paddingHorizontal="16dp"
+    android:gravity="center_vertical"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- Icon (Có thể thay đổi dựa trên loại nhắc nhở: bill, debt_payment...) -->
+    <ImageView
+        android:id="@+id/img_reminder_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="16dp"
+        app:srcCompat="@drawable/ic_reminder_placeholder" /> <!-- Cần tạo icon này -->
+
+    <!-- Thông tin nhắc nhở -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_reminder_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Tiền điện tháng 6"
+            android:textSize="16sp"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <!-- Hiển thị ngày đến hạn và số tiền -->
+        <TextView
+            android:id="@+id/txt_reminder_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Due: 20 Jun 2024 - 500,000 ₫"
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorSecondary"/>
+    </LinearLayout>
+
+    <!-- Checkbox hoặc nút để đánh dấu đã thanh toán -->
+    <CheckBox
+        android:id="@+id/checkbox_reminder_paid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp" />
+
+    <!-- Optional: Nút Edit/Delete -->
+    <!--
+    <ImageButton android:id="@+id/btn_edit_reminder" ... />
+    <ImageButton android:id="@+id/btn_delete_reminder" ... />
+    -->
+
+</LinearLayout>

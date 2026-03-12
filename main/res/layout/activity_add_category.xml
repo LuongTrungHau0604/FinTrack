@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:colorBackground"
+    tools:context=".ui.categories.AddCategoryActivity">
+
+    <!-- 1. Toolbar (thay thế RelativeLayout header) -->
+    <com.google.android.material.appbar.MaterialToolbar
+    android:id="@+id/toolbar_add_category"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimary" />
+
+        <!-- 2. Nội dung chính -->
+    <androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Category Name Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_layout_category_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Category Name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_text_category_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Category Type Selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category Type"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_category_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_expense"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expense"
+                android:checked="true"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_income"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Income" />
+        </com.google.android.material.chip.ChipGroup>
+
+
+        <!-- TODO: Thêm phần chọn Icon và Màu sắc -->
+        <!-- Ví dụ đơn giản cho chọn Icon (bạn cần hiện thực phần chọn thực tế) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Icon"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"/>
+
+        <ImageView
+            android:id="@+id/image_view_selected_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_placeholder_category" />
+        <!-- Nút để mở dialog/màn hình chọn icon -->
+        <Button
+            android:id="@+id/btn_select_icon"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Icon"
+            android:layout_marginTop="8dp"/>
+
+
+        <!-- TODO: Thêm phần chọn Màu sắc (ví dụ: Color Picker Dialog) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"/>
+
+        <View
+            android:id="@+id/view_selected_color"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="#CCCCCC" />
+        <!-- Nút để mở dialog chọn màu -->
+        <Button
+            android:id="@+id/btn_select_color"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Color"
+            android:layout_marginTop="8dp"/>
+
+        <!-- Save Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_save_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:paddingVertical="12dp"
+            android:text="Save Category" />
+
+        <!-- ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progress_bar_add_category"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    </LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material Design Default Colors (Keep these) -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Your Custom Colors -->
+    <color name="colorExpense">#E57373</color> <!-- Light Red -->
+    <color name="colorIncome">#81C784</color>  <!-- Light Green -->
+    <color name="backgroundColor">@color/background</color>
+    <!-- Colors from Error Messages (Add these) -->
+    <color name="background_light">#FAFAFA</color> <!-- Example light background (adjust as needed) -->
+    <color name="primary_blue">#2196F3</color>   <!-- Example primary blue (adjust to your app's blue) -->
+    <color name="grey_text">#666666</color>      <!-- Example grey text color -->
+    <color name="dark_grey">#444444</color>     <!-- Example dark grey text color -->
+    <color name="border_grey">#CCCCCC</color>    <!-- Example border grey color -->
+    <color name="border_teal">#4DB6AC</color>    <!-- Example teal border/accent color -->
+    <color name="hint_teal">#A0C7C4</color>     <!-- Example hint color -->
+    <color name="icon_grey">#888888</color>      <!-- Example icon tint color -->
+    <color name="red_error">#D32F2F</color>      <!-- Example red for errors/logout -->
+
+    <!-- Colors potentially needed by styles (adjust to your app's theme) -->
+    <color name="colorPrimary">#6200EE</color>       <!-- Your primary color -->
+    <color name="colorPrimaryDark">#3700B3</color>    <!-- Your darker primary color -->
+    <color name="colorAccent">#03DAC5</color>        <!-- Your accent color -->
+    <color name="textColorPrimary">#DE000000</color>  <!-- 87% black -->
+    <color name="textColorSecondary">#8A000000</color> <!-- 54% black -->
+    <color name="windowBackground">#FFFFFF</color>    <!-- Default window background -->
+
+    <color name="background">#FFFFFF</color>
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#757575</color>
+    <color name="primary">#2A7C76</color>
+
+</resources>
